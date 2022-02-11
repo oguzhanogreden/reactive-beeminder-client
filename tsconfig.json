@@ -1,0 +1,15 @@
+{
+	"extends": "@tsconfig/recommended/tsconfig.json",
+	"compilerOptions": {
+	"strict": true,
+	"module": "commonjs",
+	"removeComments": true,
+	"esModuleInterop": true,
+	"target": "es2021",
+	"moduleResolution": "node",
+	"sourceMap": true,
+	"outDir": "dist"
+	},
+	"include": ["./src/**/*"]
+  }
+  
