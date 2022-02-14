@@ -28,7 +28,13 @@ import { GoalResponse, UserResponse } from "./api";
 	goals: string[],
   }
   
+type ClientConstructor = {
+    token: string;
+    client: (token: string) => IClient;
+};
+
   export class Client {
+    private _clientFactory: (token: string) => IClient;
 	private _client: IClient;
 	private _userDataStream = new Subject<UserResponse>();
 	private _goalDataStream = new ReplaySubject<GoalResponse>();
