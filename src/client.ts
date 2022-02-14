@@ -52,11 +52,18 @@ import { GoalResponse, UserResponse } from "./api";
 	  }),
 	  shareReplay(1)
 	);
+
   
-	constructor(token: string, client: (token: string) => IClient ) {
-	  this._client = client(token);
-	  // this._client = _beeminder(token);
+	constructor(params: ClientConstructor) {
+        const { token, client } = params;
+        this._clientFactory = client;
+
+        this._client = this._clientFactory(token);
 	}
+    
+    setToken(apiToken: string) {
+        this._client = this._clientFactory(apiToken);
+    }
   
 	getGoalNames() {
 	  this._client.getUser(this.getGoalNamesCallback.bind(this));
