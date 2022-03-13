@@ -1,6 +1,6 @@
 {
   "name": "reactive-beeminder-client",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Beeminder client with data streams",
   "main": "dist/main.js",
   "scripts": {
@@ -22,6 +22,8 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "immer": "^9.0.12",
+    "redux-observable": "^2.0.0-rc.2",
     "rxjs": "^7.5.4"
   }
 }
